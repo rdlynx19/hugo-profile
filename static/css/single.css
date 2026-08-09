@@ -71,6 +71,18 @@
     background-color: var(--secondary-color) !important;
 }
 
+/* MathJax display equations - long ones otherwise overflow the article
+   width on narrow screens and break the page layout, so contain them the
+   same way tables scroll internally instead of blowing out. Scoped to
+   display="true" only - inline equations must stay inline-block or every
+   \(x\) inside a sentence gets forced onto its own line. */
+#single .page-content mjx-container[display="true"] {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: block !important;
+}
+
 /* table */
 #single .page-content table {
     width: auto;
