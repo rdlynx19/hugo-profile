@@ -1,7 +1,6 @@
 
 /* Default font for body */
 body {
-    /* font-family: "Lora", serif !important; */
     font-family: "Poppins", sans-serif !important;
 }
 
@@ -18,4 +17,12 @@ body {
 /* Default font */
 .default-font, #default-font {
     font-family: "Poppins", sans-serif;
+}
+
+/* Geometric sans headings, paired against the Poppins body */
+h1, h2, h3, h4, h5, h6,
+.card-title,
+.navbar-brand {
+    font-family: "Space Grotesk", sans-serif !important;
+    font-weight: 600 !important;
 }

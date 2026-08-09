@@ -1,70 +1,6 @@
-/* projects
-
-#projects h3 {
-    color: var(--text-secondary-color) !important;
-}
-
-#projects a {
-    text-decoration: none;
-    color: var(--text-link-color) !important;
-}
-
-#projects .badge {
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
-    margin: 0 1%;
-}
-
-#projects .card {
-    background-color: var(--secondary-color) !important;
-    box-shadow: 0px 8px 56px rgb(15 80 100 / 16%);
-    min-height: 400px;
-    overflow: hidden;
-    border-radius: 1rem;
-    border: none !important;
-}
-
-#projects .card:hover {
-    box-shadow: 0 0 11px rgb(15 80 100 / 20%);
-    transition: transform 0.3s;
-    transform: translateY(-7px);
-}
-
-#projects .card .card-head {
-    -o-object-fit: cover;
-    object-fit: cover;
-    overflow: hidden;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    border: none !important;
-}
-
-#projects .card .card-footer {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-}
-
-#projects .card:hover .card-img-top {
-    transform: scale(1.2);
-    transition: all 0.3s ease-out;
-}
-
-#projects .card-img-top {
-    transition: transform 0.3s;
-}
-
-#projects .float-end .btn {
-    transition: none;
-    border-radius: .5rem !important;
-    border-color: var(--primary-color) !important;
-}
-
-#projects .float-end .btn:focus {
-    box-shadow: none !important;
-}
-
- */
 /* projects */
+/* Soft framed / editorial card style: large rounded corners, inset image,
+   pill-shaped badges. */
 
 #projects h3 {
     color: var(--text-secondary-color) !important;
@@ -78,49 +14,47 @@
 #projects .badge {
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
-    margin: 0 1%;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    padding: 0.3em 0.85em;
+    border-radius: 999px;
+    margin: 0 0.35em 0.35em 0;
+    display: inline-block;
 }
 
 #projects .card {
     background-color: var(--secondary-color) !important;
-    box-shadow: 0px 8px 56px rgb(15 80 100 / 16%);
-    /* min-height: 400px; */
+    box-shadow: 0px 10px 40px rgb(15 80 100 / 10%);
     overflow: hidden;
-    border-radius: 1.5rem;
+    border-radius: 1.75rem;
     border: none !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #projects .card:hover {
-    box-shadow: 0 0 11px rgb(15 80 100 / 20%);
-    transition: transform 0.3s;
-    transform: translateY(-7px);
+    box-shadow: 0 4px 18px rgb(15 80 100 / 18%);
+    transform: translateY(-5px);
 }
 
 #projects .card .card-head {
-    height: 250px; /*Fixed height for the image container*/
+    height: 230px;
     overflow: hidden;
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
-    border: none !important;
+    padding: 0.75rem 0.75rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #projects .card .card-head img {
-    width: 100%;/* Ensure the image takes up the full width of the container */
-    height: 100%; /* Ensure the image takes up the full height of the container */
-    object-fit: cover; /* Ensures the image covers the container without distortion */
-    /* border: 2px solid red; */
-}
-
-#projects .card .card-footer {
-    border-bottom-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.25rem;
 }
 
 #projects .card:hover .card-img-top {
-    transform: scale(1.2);
+    transform: scale(1.05);
     transition: all 0.3s ease-out;
 }
 
@@ -131,10 +65,46 @@
 
 #projects .float-end .btn {
     transition: none;
-    border-radius: .5rem !important;
+    border-radius: 2rem !important;
     border-color: var(--primary-color) !important;
 }
 
 #projects .float-end .btn:focus {
     box-shadow: none !important;
+}
+
+/* Keep equal-height cards in a row: clamp titles to a fixed number of lines
+   and reserve consistent space for the badge row, so cards line up evenly. */
+#projects .card .card-body > div:first-child {
+    min-height: 2.6em;
+}
+
+#projects .card-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.25;
+    min-height: 3.75em;
+    margin-bottom: 0 !important;
+}
+
+/* No description text on cards - title/badges/image only */
+#projects .card .card-text {
+    display: none;
+}
+
+/* Tighter, more "flush" grid: the column and the card both carried their own
+   my-3 margin, doubling up the vertical gap between rows. */
+#projects .row > div {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+#projects .card {
+    margin: 0 !important;
+}
+
+#projects .card-body {
+    padding-bottom: 0.5rem !important;
 }
