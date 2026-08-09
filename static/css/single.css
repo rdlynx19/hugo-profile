@@ -83,6 +83,12 @@
     display: block !important;
 }
 
+@media (max-width: 480px) {
+    #single .page-content mjx-container[display="true"] {
+        font-size: 85%;
+    }
+}
+
 /* table */
 #single .page-content table {
     width: auto;
